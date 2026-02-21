@@ -1,4 +1,5 @@
-import { Wallet, WalletId } from '@txnlab/use-wallet-react'
+import { WalletId } from '@algorandecosystem/use-wallet'
+import { Wallet } from '@algorandecosystem/use-wallet-react'
 import { useCallback } from 'react'
 import { selectedKmdWalletAtom } from '../data/selected-kmd-wallet'
 import { useSetAtom } from 'jotai'

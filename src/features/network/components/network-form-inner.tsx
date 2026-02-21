@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Fieldset } from '@/features/forms/components/fieldset'
 import { editNetworkConfigFormSchema } from '@/features/settings/form-schemas/edit-network-config-form-schema'
 import { createNetworkConfigFormSchema } from '@/features/settings/form-schemas/create-network-config-form-schema'
-import { WalletId } from '@txnlab/use-wallet-react'
+import { WalletId } from '@algorandecosystem/use-wallet'
 import {
   allWalletProviderNames,
   defaultNetworkConfigs,

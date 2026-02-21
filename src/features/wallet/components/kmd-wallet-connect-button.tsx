@@ -1,5 +1,5 @@
 import { Button } from '@/features/common/components/button'
-import { Wallet } from '@txnlab/use-wallet-react'
+import { Wallet } from '@algorandecosystem/use-wallet-react'
 import { cn } from '@/features/common/utils'
 import { Loader2 as Loader, Wallet as WalletIcon } from 'lucide-react'
 import { defaultKmdWallet, selectedKmdWalletAtom } from '../data/selected-kmd-wallet'

@@ -8,6 +8,7 @@ import { atomEffect } from 'jotai-effect'
 import { TransactionSigner } from '@algorandfoundation/algokit-utils/transact'
 
 const activeWalletAddressAtom = atom<Promise<Address | undefined> | (Address | undefined)>(new Promise<Address | undefined>(() => {}))
+
 export const activeWalletAccountAtom = atomWithRefresh<Promise<ActiveWalletAccount | undefined>>(async (get) => {
   const activeWalletAddress = await get(activeWalletAddressAtom)
   if (activeWalletAddress) {
@@ -17,12 +18,14 @@ export const activeWalletAccountAtom = atomWithRefresh<Promise<ActiveWalletAccou
   }
 })
 
-export const useSetActiveWalletState = (isReady: boolean, activeAddress: string | undefined, signer: TransactionSigner) => {
+export const useSetActiveWalletState = (isReady: boolean, activeAddress: string | undefined, signer?: TransactionSigner) => {
   const setActiveWalletAddress = useSetAtom(activeWalletAddressAtom)
   useEffect(() => {
     if (isReady) {
       setActiveWalletAddress(activeAddress)
-      algorandClient.setDefaultSigner(signer)
+      if (signer) {
+        algorandClient.setDefaultSigner(signer)
+      }
     }
   }, [setActiveWalletAddress, activeAddress, signer, isReady])
 }

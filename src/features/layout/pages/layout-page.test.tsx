@@ -3,7 +3,8 @@ import { fireEvent, render, waitFor } from '@/tests/testing-library'
 import { describe, expect, it, vi } from 'vitest'
 import { LayoutPage } from '@/features/layout/pages/layout-page'
 import { connectWalletLabel, selectAccountLabel, disconnectWalletLabel } from '@/features/wallet/components/connect-wallet-button'
-import { NetworkId, Wallet, WalletId, useWallet } from '@txnlab/use-wallet-react'
+import { NetworkId, WalletId } from '@algorandecosystem/use-wallet'
+import { Wallet, useWallet } from '@algorandecosystem/use-wallet-react'
 import { AlgodClient } from '@algorandfoundation/algokit-utils/algod-client'
 
 describe('when rendering the layout page', () => {
@@ -39,7 +40,7 @@ describe('when rendering the layout page', () => {
 
   describe('and the wallet is connected', () => {
     it('the wallet address is shown', async () => {
-      const original = await vi.importActual<{ useWallet: () => ReturnType<typeof useWallet> }>('@txnlab/use-wallet-react')
+      const original = await vi.importActual<{ useWallet: () => ReturnType<typeof useWallet> }>('@algorandecosystem/use-wallet-react')
       vi.mocked(useWallet).mockImplementation(() => {
         return {
           ...original.useWallet(),
@@ -63,7 +64,7 @@ describe('when rendering the layout page', () => {
     })
     describe('and there is more than one account', () => {
       it('the account switcher should be shown', async () => {
-        const original = await vi.importActual<{ useWallet: () => ReturnType<typeof useWallet> }>('@txnlab/use-wallet-react')
+        const original = await vi.importActual<{ useWallet: () => ReturnType<typeof useWallet> }>('@algorandecosystem/use-wallet-react')
         vi.mocked(useWallet).mockImplementation(() => {
           return {
             ...original.useWallet(),

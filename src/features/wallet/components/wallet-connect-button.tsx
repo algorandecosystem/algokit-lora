@@ -1,5 +1,6 @@
 import { Button } from '@/features/common/components/button'
-import { WalletId, Wallet } from '@txnlab/use-wallet-react'
+import { WalletId } from '@algorandecosystem/use-wallet'
+import { Wallet } from '@algorandecosystem/use-wallet-react'
 import { cn } from '@/features/common/utils'
 import { Wallet as WalletIcon } from 'lucide-react'
 

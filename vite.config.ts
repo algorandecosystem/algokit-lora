@@ -51,5 +51,17 @@ export default defineConfig(({ mode }) => ({
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
+    preserveSymlinks: true,
+  },
+  optimizeDeps: {
+    include: [
+      '@tanstack/react-store',
+      '@algorandecosystem/use-wallet',
+      '@algorandecosystem/use-wallet-react',
+      'algosdk',
+      '@blockshake/defly-connect',
+      '@perawallet/connect',
+      'lute-connect',
+    ],
   },
 }))

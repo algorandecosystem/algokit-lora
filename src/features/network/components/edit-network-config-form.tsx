@@ -10,7 +10,7 @@ import { editNetworkConfigFormSchema } from '@/features/settings/form-schemas/ed
 import { NetworkFormInner } from '@/features/network/components/network-form-inner'
 import { asStorableServiceConfig } from '@/features/settings/mappers'
 import { NetworkConfigWithId } from '@/features/network/data/types'
-import { WalletId } from '@txnlab/use-wallet-react'
+import { WalletId } from '@algorandecosystem/use-wallet'
 import { useRefreshDataProviderToken } from '@/features/common/data'
 import { Alert } from '@/features/common/components/alert'
 import { tokenStorageText } from '@/features/network/components/labels'

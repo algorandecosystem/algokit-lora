@@ -1,6 +1,6 @@
 import { atom, useAtomValue, useSetAtom } from 'jotai'
 import { atomWithDefault, atomWithRefresh, atomWithStorage } from 'jotai/utils'
-import { WalletId } from '@txnlab/use-wallet-react'
+import { WalletId } from '@algorandecosystem/use-wallet'
 import { useCallback } from 'react'
 import {
   NetworkConfig,
@@ -21,7 +21,7 @@ import { useDisconnectAllWallets } from '@/features/wallet/hooks/use-disconnect-
 
 export { localnetId, testnetId, mainnetId, fnetId, betanetId } from './types'
 export const localnetWalletIds = [WalletId.KMD, WalletId.MNEMONIC, WalletId.LUTE]
-export const nonLocalnetWalletIds = [WalletId.DEFLY, WalletId.PERA, WalletId.EXODUS, WalletId.LUTE]
+export const nonLocalnetWalletIds = [WalletId.DEFLY, WalletId.PERA, WalletId.EXODUS, WalletId.LUTE, WalletId.LIQUID_ALGORAND_ECOSYSTEM]
 export const allWalletProviderNames: Record<WalletId, string> = {
   kmd: 'KMD',
   mnemonic: 'MNEMONIC',
@@ -37,6 +37,8 @@ export const allWalletProviderNames: Record<WalletId, string> = {
   magic: 'Magic',
   'w3-wallet': 'w3-wallet',
   biatec: 'Biatec',
+  'liquid-algorand-ecosystem': 'Liquid Auth',
+  web3auth: 'Web3Auth',
 }
 
 export const MAINNET_FEE_SINK_ADDRESS = 'Y76M3MSY6DKBRHBL7C3NNDXGS5IIMQVQVUAB6MP4XEMMGVF2QWNPL226CA'

@@ -1,7 +1,7 @@
 import { AlgorandClient, Config } from '@algorandfoundation/algokit-utils'
 import { networkConfigAtom } from '@/features/network/data'
 import { settingsStore } from '@/features/settings/data'
-import { WalletId } from '@txnlab/use-wallet-react'
+import { WalletId } from '@algorandecosystem/use-wallet'
 import { localnetId, NetworkConfig, NetworkConfigWithId } from '@/features/network/data/types'
 import { ClientManager } from '@algorandfoundation/algokit-utils/client-manager'
 

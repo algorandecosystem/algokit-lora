@@ -25,6 +25,7 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
+    "@algorandecosystem/liquid-auth-use-wallet-client": "1.5.0",
     "@algorandfoundation/algokit-subscriber": "^4.0.0-alpha.6",
     "@algorandfoundation/algokit-utils": "^10.0.0-alpha.32",
     "@auth0/auth0-react": "^2.2.4",
@@ -50,9 +51,10 @@
     "@radix-ui/react-switch": "^1.2.5",
     "@radix-ui/react-tabs": "^1.0.4",
     "@radix-ui/react-tooltip": "^1.0.7",
+    "@tanstack/react-store": "0.8.0",
     "@tanstack/react-table": "^8.16.0",
-    "@txnlab/use-wallet": "^4.0.0",
-    "@txnlab/use-wallet-react": "^4.0.0",
+    "@algorandecosystem/use-wallet": "4.7.0-beta.0",
+    "@algorandecosystem/use-wallet-react": "4.7.0-beta.0",
     "@xstate/react": "^5.0.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
