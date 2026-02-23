@@ -19,7 +19,6 @@ import { BlockLink } from '@/features/blocks/components/block-link'
 import { ChevronDown, ChevronRight } from 'lucide-react'
 import { DateFormatted } from '@/features/common/components/date-formatted'
 import { TransactionTypeBadge } from './transaction-type-badge'
-import { Badge } from '@/features/common/components/badge'
 
 const indentationWidth = 12
 
