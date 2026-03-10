@@ -1,5 +1,5 @@
 import { Address } from '@/features/accounts/data/types'
-import { WalletId } from '@txnlab/use-wallet-react'
+import { WalletId } from '@algorandecosystem/use-wallet'
 
 export const localnetId = 'localnet'
 export const testnetId = 'testnet'

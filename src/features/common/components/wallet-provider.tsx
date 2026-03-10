@@ -2,7 +2,7 @@ import { PropsWithChildren, useMemo } from 'react'
 import { WalletProviderInner } from './wallet-provider-inner'
 import { defaultKmdWallet, useSelectedKmdWallet } from '@/features/wallet/data/selected-kmd-wallet'
 import { mainnetId, NetworkConfigWithId } from '@/features/network/data/types'
-import { SupportedWallet, WalletId, WalletIdConfig, WalletManager } from '@txnlab/use-wallet-react'
+import { SupportedWallet, WalletId, WalletIdConfig, WalletManager } from '@algorandecosystem/use-wallet'
 import { DialogBodyProps, useDialogForm } from '../hooks/use-dialog-form'
 import { PromptForm } from './prompt-form'
 import { loraKmdDevWalletName } from '@/features/fund/utils/kmd'
@@ -69,6 +69,15 @@ export function WalletProvider({ networkConfig, children }: Props) {
           })
         } else if ([WalletId.DEFLY, WalletId.PERA, WalletId.EXODUS].includes(id)) {
           acc.push(id)
+        } else if (id === WalletId.LIQUID_ALGORAND_ECOSYSTEM) {
+          acc.push({
+            id,
+            options: {
+              origin: 'https://liquid-auth-api.pg.nodely.dev',
+              RTC_config_username: 'liquid-auth',
+              RTC_config_credential: 'sqmcP4MiTKMT4TGEDSk9jgHY'
+            },
+          })
         } else if (id === WalletId.LUTE) {
           acc.push({
             id,

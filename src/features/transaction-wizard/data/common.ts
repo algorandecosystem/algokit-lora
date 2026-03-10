@@ -156,6 +156,8 @@ export const commonSchema = {
 
 export const commonFormData = zfd.formData(commonSchema)
 
+const nullSigner = makeEmptyTransactionSigner()
+
 export const buildComposer = async (transactions: BuildTransactionResult[]) => {
   const algokitTxns: Transaction[] = []
 
@@ -165,11 +167,9 @@ export const buildComposer = async (transactions: BuildTransactionResult[]) => {
   }
 
   const composer = algorandClient.newGroup()
-  algokitTxns.forEach((txn) => composer.addTransaction(txn))
+  algokitTxns.forEach((txn) => composer.addTransaction(txn, nullSigner))
   return composer
 }
-
-const nullSigner = makeEmptyTransactionSigner()
 
 export const buildComposerWithEmptySignatures = async (transactions: BuildTransactionResult[]) => {
   const algokitTxns: Transaction[] = []

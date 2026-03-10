@@ -1,5 +1,5 @@
 import { mainnetId, NetworkConfigWithId } from '@/features/network/data/types'
-import { WalletManager } from '@txnlab/use-wallet'
+import { WalletManager } from '@algorandecosystem/use-wallet'
 import { PropsWithChildren, useMemo } from 'react'
 import { WalletProviderInner } from '@/features/common/components/wallet-provider-inner'
 

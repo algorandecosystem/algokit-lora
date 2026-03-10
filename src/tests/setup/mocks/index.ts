@@ -1,5 +1,6 @@
 import { vi } from 'vitest'
-import { NetworkId, Wallet, WalletId, useWallet } from '@txnlab/use-wallet-react'
+import { NetworkId, WalletId } from '@algorandecosystem/use-wallet'
+import { Wallet, useWallet } from '@algorandecosystem/use-wallet-react'
 import { AlgodClient } from '@algorandfoundation/algokit-utils/algod-client'
 
 vi.mock('react-router-dom', async () => ({
@@ -15,8 +16,8 @@ vi.mock('@algorandfoundation/algokit-utils', async () => ({
   lookupTransactionById: vi.fn(),
 }))
 
-vi.mock('@txnlab/use-wallet-react', async () => {
-  const original = await vi.importActual<{ useWallet: () => ReturnType<typeof useWallet> }>('@txnlab/use-wallet-react')
+vi.mock('@algorandecosystem/use-wallet-react', async () => {
+  const original = await vi.importActual<{ useWallet: () => ReturnType<typeof useWallet> }>('@algorandecosystem/use-wallet-react')
   return {
     ...original,
     useWallet: vi.fn().mockImplementation(() => {

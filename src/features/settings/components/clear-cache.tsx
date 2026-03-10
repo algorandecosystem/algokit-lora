@@ -1,5 +1,5 @@
 import { Button } from '@/features/common/components/button'
-import { useWallet } from '@txnlab/use-wallet-react'
+import { useWallet } from '@algorandecosystem/use-wallet-react'
 import { useDisconnectWallet } from '@/features/wallet/hooks/use-disconnect-wallet'
 import { useMemo } from 'react'
 
